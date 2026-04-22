@@ -1118,7 +1118,7 @@
                     <p>รถบรรทุกสิบล้อ รถแมคโคร สภาพพร้อมลุยทุกพื้นที่</p>
                     <div>
                         <a href="tel:082-758-4370" class="btn btn-call"><i class="fas fa-phone"></i> โทรเลยตอนนี้</a>
-                        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn btn-line"><i class="fab fa-line"></i>
+                        <a href="https://line.me/ti/p/oM7AbAx8cW" class="btn btn-line"><i class="fab fa-line"></i>
                             แอดไลน์สอบถาม</a>
                     </div>
                 </div>
@@ -1131,7 +1131,7 @@
                     <p>รับงานขุดลอกคลอง เคลียร์ริ่งพื้นที่ ด้วยเครื่องจักรทันสมัย</p>
                     <div>
                         <a href="tel:082-758-4370" class="btn btn-call"><i class="fas fa-phone"></i> โทรเลยตอนนี้</a>
-                        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn btn-line"><i class="fab fa-line"></i>
+                        <a href="https://line.me/ti/p/oM7AbAx8cW" class="btn btn-line"><i class="fab fa-line"></i>
                             แอดไลน์สอบถาม</a>
                     </div>
                 </div>
@@ -1144,7 +1144,7 @@
                     <p>หัวเจาะกระแทก รื้อถอนพื้นคอนกรีต สภาพดี ไม่จุกจิกกวนใจหน้างาน</p>
                     <div>
                         <a href="tel:082-758-4370" class="btn btn-call"><i class="fas fa-phone"></i> โทรเลยตอนนี้</a>
-                        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn btn-line"><i class="fab fa-line"></i>
+                        <a href="https://line.me/ti/p/oM7AbAx8cW" class="btn btn-line"><i class="fab fa-line"></i>
                             แอดไลน์สอบถาม</a>
                     </div>
                 </div>
@@ -1157,7 +1157,7 @@
                     <p>เคลียร์หน้าดิน ปรับพื้นที่ พร้อมรถบรรทุกขนดินทิ้ง</p>
                     <div>
                         <a href="tel:082-758-4370" class="btn btn-call"><i class="fas fa-phone"></i> โทรเลยตอนนี้</a>
-                        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn btn-line"><i class="fab fa-line"></i>
+                        <a href="https://line.me/ti/p/oM7AbAx8cW" class="btn btn-line"><i class="fab fa-line"></i>
                             แอดไลน์สอบถาม</a>
                     </div>
                 </div>
@@ -1222,9 +1222,9 @@
                     <b>ส่งข้อความ</b>
                     <span>หจก.ทรัพย์วงค์คำ</span>
                 </a>
-                <a href="https://line.me/ti/p/~0981414698" target="_blank" class="contact-card">
+                <a href="https://line.me/ti/p/oM7AbAx8cW" target="_blank" class="contact-card">
                     <div class="cc-icon cc-green"><i class="fab fa-line"></i></div>
-                    <b>ID : 098 141 4698</b>
+                    <b>ID : 0640020999</b>
                     <span>หจก.ทรัพย์วงค์คำ</span>
                 </a>
             </div>
@@ -1324,9 +1324,9 @@
                         <div class="f-icon orange"><i class="fas fa-phone-alt"></i></div>
                         <div class="f-text"><small>โทร</small><b>064-002-0999</b></div>
                     </a>
-                    <a href="#" class="f-contact-pill">
+                    <a href="https://line.me/ti/p/oM7AbAx8cW" class="f-contact-pill">
                         <div class="f-icon green"><i class="fab fa-line"></i></div>
-                        <div class="f-text"><small>เพิ่มเพื่อนไลน์ คลิก</small><b>ID : 0981414698</b></div>
+                        <div class="f-text"><small>เพิ่มเพื่อนไลน์ คลิก</small><b>ID:064-002-0999</b></div>
                     </a>
 
                 </div>
@@ -1358,10 +1358,10 @@
     </footer>
 
     <div class="mobile-footer">
-        <a href="tel:08XXXXXXXX" class="footer-call">
+        <a href="tel:064-002-0999" class="footer-call">
             <i class="fas fa-phone-alt"></i> โทรด่วน
         </a>
-        <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="footer-line">
+        <a href="https://line.me/ti/p/oM7AbAx8cW" class="footer-line">
             <i class="fab fa-line"></i> ติดต่อไลน์
         </a>
     </div>
@@ -1424,16 +1424,26 @@
                         const grid = document.getElementById('articleDynamicGrid');
                         grid.innerHTML = '';
                         data.articles.forEach(art => {
-                            const card = document.createElement('div');
-                            card.className = 'article-card';
-                            card.innerHTML = `
+                            const cardLink = document.createElement('a');
+                            cardLink.href = `article.html?id=${art.id}`;
+                            cardLink.className = 'article-card';
+                            cardLink.style.textDecoration = 'none';
+                            cardLink.style.color = 'inherit';
+                            
+                            // ตัดข้อความ description ให้สั้นลงสำหรับแสดงใน card
+                            let shortDesc = art.description;
+                            if (shortDesc.length > 100) {
+                                shortDesc = shortDesc.substring(0, 100) + '...';
+                            }
+
+                            cardLink.innerHTML = `
                                 <img src="${art.image_url}" alt="${art.title}">
                                 <div class="article-content">
                                     <h3>${art.title}</h3>
-                                    <p>${art.description}</p>
+                                    <p>${shortDesc}</p>
                                 </div>
                             `;
-                            grid.appendChild(card);
+                            grid.appendChild(cardLink);
                         });
                     }
                 }
