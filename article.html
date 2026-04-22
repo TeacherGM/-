@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อ่านบทความ | แมคโครเช่าเชียงราย หจก.ทรัพย์วงค์คำ</title>
+    <meta name="description" content="บทความเกี่ยวกับ แมคโครเช่า ถมที่เชียงราย ปรับที่เชียงราย เคล็ดลับการก่อสร้าง โดย หจก.ทรัพย์วงค์คำ">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffcc00;
+            --dark-color: #222;
+            --light-color: #f4f4f4;
+            --success-color: #28a745;
+            --line-color: #00c300;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        header {
+            background: var(--dark-color);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./image/slide1.jpg') center/cover no-repeat;
+            padding: 5rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        .breadcrumb {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Single Article Container */
+        .single-article-container {
+            padding: 4rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #articleContent {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .article-image-full {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .article-body {
+            padding: 40px;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #111;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .article-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .article-body p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.8;
+            white-space: pre-wrap; /* Preserve newlines from textarea */
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: #ccc;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-footer {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            grid-template-columns: 1fr 1fr;
+            z-index: 2000;
+        }
+
+        .mobile-footer a {
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-call { background: var(--success-color); }
+        .footer-line { background: var(--line-color); }
+
+        @media (max-width: 768px) {
+            .mobile-footer { display: grid; }
+            body { padding-bottom: 60px; }
+            .page-header h1 { font-size: 2.2rem; }
+            .article-body { padding: 25px; }
+            .article-body h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-hard-hat"></i> หจก.ทรัพย์วงค์คำ</a>
+        <div class="header-right">
+            <div class="contact-top">โทร: 082-758-4370</div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>รายละเอียดบทความ</h1>
+        <div class="breadcrumb">
+            <a href="index.html">หน้าหลัก</a> / <a href="articles.html">บทความทั้งหมด</a> / รายละเอียดบทความ
+        </div>
+    </section>
+
+    <div class="single-article-container">
+        <div id="articleContent">
+            <div style="padding: 40px; text-align: center;">กำลังโหลดข้อมูลบทความ...</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">หจก.ทรัพย์วงค์คำ</div>
+        <p>บริการแมคโครครบชุด เชียงแสน แม่จัน แม่สาย เชียงราย</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">&copy; 2024 หจก.ทรัพย์วงค์คำ. All rights reserved.</p>
+    </footer>
+
+    <div class="mobile-footer">
+        <a href="tel:0827584370" class="footer-call"><i class="fas fa-phone-alt"></i> โทรด่วน</a>
+        <a href="https://line.me/ti/p/~0981414698" class="footer-line"><i class="fab fa-line"></i> ติดต่อไลน์</a>
+    </div>
+
+    <script>
+        async function fetchArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            const contentDiv = document.getElementById('articleContent');
+
+            if (!id) {
+                contentDiv.innerHTML = '<div style="padding: 40px; text-align: center;">ไม่พบบทความ กรุณากลับไปเลือกบทความอีกครั้ง</div>';
+                return;
+            }
+
+            try {
+                const res = await fetch(`api_articles.php?id=${id}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.success && data.article) {
+                        const art = data.article;
+                        
+                        // Format date
+                        let dateStr = '';
+                        if (art.created_at) {
+                            const d = new Date(art.created_at);
+                            dateStr = d.toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' });
+                        }
+
+                        document.title = `${art.title} | แมคโครเช่าเชียงราย หจก.ทรัพย์วงค์คำ`;
+
+                        contentDiv.innerHTML = `
+                            <img src="${art.image_url}" alt="${art.title}" class="article-image-full">
+                            <div class="article-body">
+                                <h2>${art.title}</h2>
+                                ${dateStr ? `<div class="article-date"><i class="far fa-calendar-alt"></i> ${dateStr}</div>` : ''}
+                                <p>${art.description}</p>
+                                <a href="articles.html" class="back-button"><i class="fas fa-arrow-left"></i> กลับสู่หน้าบทความทั้งหมด</a>
+                            </div>
+                        `;
+                    } else {
+                        contentDiv.innerHTML = `<div style="padding: 40px; text-align: center;">${data.message || 'ไม่พบบทความ'}</div>`;
+                    }
+                } else {
+                    contentDiv.innerHTML = '<div style="padding: 40px; text-align: center;">เกิดข้อผิดพลาดในการโหลดบทความ</div>';
+                }
+            } catch (err) {
+                console.error('Error fetching article:', err);
+                contentDiv.innerHTML = '<div style="padding: 40px; text-align: center;">เกิดข้อผิดพลาดในการเชื่อมต่อ</div>';
+            }
+        }
+
+        fetchArticle();
+    </script>
+</body>
+</html>
